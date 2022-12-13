@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <link rel="stylesheet" href="css/style.css">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>lesson_23</title>
+</head>
+
+<body>
+   <header class="header"></header>
+   <main class="page">
+      <div class="page__container">
+         <h1>Домашка_23</h1>
+         <div class="lesson">
+            <h3>Урок №5. Операторы в JavaScript</h3>
+            <p>
+               <span>Вариант 1</span> не вернёт 13 т.к. бинарный оператор
+               плюс не преобразовывает тип String в Number
+            </p>
+            <p>
+               <span>Вариант 3</span> не вернёт true, будет ошибка т.к.
+               инкремент работает только с переменными а 22 - число
+            </p>
+            <p>
+               <span>Вариант 4</span> не вернёт 1 т.к. использован постфиксный
+               вариант инкремента
+               и он меняет значение пременной usersCounter уже после
+               присвоения значения пременной newUsers
+            </p>
+            <p>
+               <span>Вариант 5</span> вернёт 11 т.к оператор || возвращает
+               первую true которую находит в логическом выражении возникшем
+               после того как два оператора && (&& имеет приоритет) вернули
+               true (возвращается значение последнего true из двух true)
+            </p>
+            <p>
+               <span>Вариант 6</span> вернёт ноль т.к. оператор ?? возвращает
+               первый аргумент, если он не null/undefined, иначе второй
+            </p>
+         </div>
+         <div class="lesson">
+            <h3>Урок №6. Условное ветвление: if, '?' в JavaScript</h3>
+            <p>
+               <span>Вариант 1</span> выведет Ложь! т.к. в условии
+               использован оператор === он не преобразует типы и
+               выражение 1 === "1" будет false, выgолнится блок else
+            </p>
+            <p>
+               <span>Вариант 2</span> выведет Истина! т.к. в условии
+               использован опратор == который всегда пытается преобразовать
+               типы, условие 5 == "5" будет true, выполнится блок if
+            </p>
+            <p>
+               <span>Вариант 3</span> присвоит Истина! т.к. условие будет true
+               выполнится код после ?
+            </p>
+            <p>
+               <span>Вариант 4</span> выведет Истина! т.к. условие к if
+               вернёт false а условие к else if вернёт true, выполнится блок
+               else if
+            </p>
+         </div>
+         <div class="lesson">
+            <h3>Урок №7. Циклы while и for в JavaScript</h3>
+            <p>
+               <span>Задача 1.</span><br>
+               <code>
+                  for (let i = 1; i &lt; 6; i++) {<br>
+                     console.log(i);<br>
+                  }
+               </code>
+            </p>
+            <p>
+               <span>Задача 2.</span> Последний результат не ноль
+               т.к. ели условие становится false блок while
+               перестаёт выполнятся, 0 это false
+            </p>
+            <p>
+               <span>Задача 3.</span><br>
+               <code>
+                  let num = 0;<br>
+                  while (num &lt; 3) {<br>
+                  console.log(`Число: ${num}`);<br>
+                  num++;<br>
+                  }
+               </code>
+            </p>
+            <p>
+               <span>Задача 4.</span><br>
+               <code>
+                  firstFor: for (let num = 0; num &lt; 2; num++) {<br>
+                     for (let size = 0; size &lt; 3; size++) {<br>
+                        if (size == 1) break firstFor;<br>
+                        console.log(size);<br>
+                     } <br>
+                  }
+               </code>
+            </p>
+         </div>
+         <div class="lesson">
+            <h3>Урок №10. Числа в JavaScript</h3>
+            <p>
+               <span>Задача 1.</span><br>
+               <code>
+                  let sourceNum = 1.005 + Number.EPSILON;<br>
+                  let numOne = Math.round(sourceNum * 100) / 100;<br>
+                  console.log(numOne);
+               </code>
+            </p>
+            <p>
+               <span>Задача 2.</span><br>
+               <code>
+                  let value1 = "135.58px";<br>
+                  let valueNumb = parseFloat(value1);<br>
+                  console.log(valueNumb);<br>
+                  console.log(typeof valueNumb);
+               </code>
+            </p>
+            <p>
+               <span>Задача 3.</span><br>
+               <code>
+                  let value2 = 58 + "Фрилансер";<br>
+                  if (isNaN(value2)) {<br>
+                     console.log('Результат выражения NaN');<br>
+                  }
+               </code>
+            </p>
+            <p>
+               <span>Задача 4.</span><br>
+               <code>
+                  let maxNum = Math.max(10, 58, 39, -150, 0);<br>
+                  console.log(`Максимальное число: ${maxNum}`);
+               </code>
+            </p>
+            <p>
+               <span>Задача 5.</span><br>
+               <code>
+                  console.log(Math.floor(58.858));
+               </code>
+            </p>
+         </div>
+         <div class="lesson">
+            <h3>Урок №11. Строки в JavaScript</h3>
+            <p>
+               <span>Задача 1.</span> Запись 'Привет! Я ${fls}'
+               не верна т.к. для применения ${} нужны обратные
+               кавычки ``
+            </p>
+            <p>
+               <span>Задача 2.</span>
+               <code>
+                  let text2 = 'фрилансер';
+                  let mySymbol = text2[5];
+                  console.log(mySymbol);
+               </code>
+            </p>
+            <p>
+               <span>Задача 3.</span>
+               Не верно, выведет <code>123456</code> т.к.
+               оперетор плюс преобразовывает 123 в строку
+            </p>
+            <p>
+               <span>Задача 4.</span>
+               <code>
+                  let text4 = 'фрилансер';
+                  console.log(text4.toUpperCase());
+               </code>
+            </p>
+            <p>
+               <span>Задача 5.</span>
+               <code>
+                  let text5 = 'фрилансер';
+                  console.log(text5.slice(3, 6));
+               </code>
+            </p>
+            <p>
+               <span>Задача 6.</span>
+               вернёт <code>false</code> т.к. в
+               <code>
+                  let text6 = 'фрилансер';
+                  console.log(text6.includes('лан', 4));
+               </code>
+               нет совпадения, подстрока "лан" начинается
+               с 3-го элемнета
+            </p>
+         </div>
+      </div>
+   </main>
+   <footer class="footer"></footer>
+   <script src="js/script.js"></script>
+</body>
+
+</html>
